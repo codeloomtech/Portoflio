@@ -1,0 +1,208 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yasmin Hussein | Portfolio</title>
+<meta name="description" content="Frontend developer in Alexandria building small, well-crafted websites, from Arabic RTL storefronts to brand landing pages.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yasmin Hussein | Portfolio">
+<meta property="og:description" content="Five websites: patisserie, home décor, event, gaming hall and gym. Arabic RTL and English.">
+<meta property="og:image" content="https://codeloomtech.github.io/cocoa-co/ph1.jpg">
+<meta property="og:url" content="https://codeloomtech.github.io/Portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16121a; --panel:#1e1925; --line:#34293a;
+  --bone:#ece5d6; --muted:#9a8f95; --brass:#c19a5b;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+ 
+header{padding:28px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:600}
+nav{display:flex;gap:24px;font-size:.92rem;color:var(--muted)}
+nav a:hover{color:var(--bone)}
+ 
+.hero{padding:96px 0 72px}
+.hero .place{color:var(--brass);font-size:.95rem;margin-bottom:24px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.8rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.01em;max-width:11ch}
+h1 em{font-style:italic;color:var(--brass)}
+.hero p{max-width:52ch;margin-top:32px;color:var(--muted);font-size:1.08rem}
+ 
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+.facts div{padding:20px 20px 20px 0}
+.facts dt{color:var(--muted);font-size:.85rem}
+.facts dd{font-family:var(--serif);font-size:1.25rem;margin-top:2px}
+ 
+section{padding:72px 0}
+h2{font-family:var(--serif);font-weight:500;font-size:2.1rem;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:40px}
+ 
+.piece{display:grid;grid-template-columns:90px 1fr auto;gap:24px;align-items:start;padding:32px 0;border-top:1px solid var(--line);transition:background .25s,padding .25s}
+.piece:last-child{border-bottom:1px solid var(--line)}
+.piece:hover{background:var(--panel);padding-left:16px;padding-right:16px}
+.cat{font-family:var(--serif);color:var(--brass);font-size:1.15rem;padding-top:6px}
+.piece h3{font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.15}
+.piece p{color:var(--muted);margin-top:8px;max-width:56ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:.8rem;color:var(--muted)}
+.status{margin-top:14px;font-size:.88rem;color:var(--brass)}
+.visit{align-self:center;border:1px solid var(--brass);color:var(--brass);padding:10px 20px;border-radius:2px;font-size:.92rem;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.visit:hover{background:var(--brass);color:var(--ink)}
+ 
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about p{color:var(--muted);margin-bottom:18px}
+.skills{list-style:none}
+.skills li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.skills li:last-child{border-bottom:1px solid var(--line)}
+.skills span:first-child{color:var(--muted)}
+ 
+.contact{text-align:left}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem);max-width:16ch}
+.mail{display:inline-block;margin-top:24px;font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,2rem);border-bottom:1px solid var(--brass);padding-bottom:4px}
+.mail:hover{color:var(--brass)}
+.links{margin-top:28px;display:flex;gap:24px;color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--bone)}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+ 
+@media (max-width:720px){
+  .piece{grid-template-columns:1fr;gap:12px}
+  .piece:hover{padding-left:0;padding-right:0;background:none}
+  .status{margin-top:14px;font-size:.88rem;color:var(--brass)}
+.visit{justify-self:start;margin-top:8px}
+  .about{grid-template-columns:1fr;gap:32px}
+  .hero{padding:64px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Yasmin Hussein</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+ 
+<main id="top">
+  <div class="wrap hero">
+    <p class="place">Catalogue, Alexandria, EG</p>
+    <h1>Interfaces built with <em>intention</em></h1>
+    <p>CS student and frontend developer. I design and build small, well-crafted websites, from Arabic RTL storefronts to brand landing pages, for clients who care how the details feel.</p>
+    <dl class="facts">
+      <div><dt>Focus</dt><dd>Frontend development, RTL/Arabic UI</dd></div>
+      <div><dt>Studying</dt><dd>Computer Science</dd></div>
+      <div><dt>Available for</dt><dd>Freelance web projects</dd></div>
+    </dl>
+  </div>
+ 
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <p class="sub">05 pieces</p>
+ 
+      <article class="piece">
+        <div class="cat">CAT. 01</div>
+        <div>
+          <h3>Cocoa &amp; Co</h3>
+          <p>A patisserie brand site built to feel as indulgent as the product: warm type, a menu that reads like a dessert case, and a layout ready for online ordering.</p>
+          <div class="tags"><span>HTML / CSS / JS</span><span>English</span><span>Brand site</span></div>
+          <div class="status">Status: Live</div>
+        </div>
+        <a class="visit" href="https://codeloomtech.github.io/cocoa-co/" target="_blank" rel="noopener">View piece</a>
+      </article>
+ 
+      <article class="piece">
+        <div class="cat">CAT. 02</div>
+        <div>
+          <h3>Nour Home Decor</h3>
+          <p>A home décor storefront designed right-to-left from the ground up, with Arabic typography and grid logic that don't just mirror an English layout.</p>
+          <div class="tags"><span>HTML / CSS / JS</span><span>Arabic RTL</span><span>Storefront</span></div>
+          <div class="status">Status: Live</div>
+        </div>
+        <a class="visit" href="https://codeloomtech.github.io/Nour-Home-Decor/" target="_blank" rel="noopener">View piece</a>
+      </article>
+ 
+      <article class="piece">
+        <div class="cat">CAT. 03</div>
+        <div>
+          <h3>LUMINA</h3>
+          <p>An event landing page for Bibliotheca Alexandrina, built to carry one evening's worth of anticipation: schedule, speakers, and a countdown that means something.</p>
+          <div class="tags"><span>HTML / CSS / JS</span><span>English</span><span>Event page</span></div>
+          <div class="status">Status: In development</div>
+        </div>
+        <a class="visit" href="https://codeloomtech.github.io/LUMINA/" target="_blank" rel="noopener">View piece</a>
+      </article>
+ 
+      <article class="piece">
+        <div class="cat">CAT. 04</div>
+        <div>
+          <h3>NEXUS ZONE</h3>
+          <p>An Arabic-language landing page for a gaming hall, built for a young, local audience without leaning on gamer-site clichés.</p>
+          <div class="tags"><span>HTML / CSS / JS</span><span>Arabic RTL</span><span>Landing page</span></div>
+          <div class="status">Status: In development</div>
+        </div>
+        <a class="visit" href="https://codeloomtech.github.io/NEXUS-ZONE/" target="_blank" rel="noopener">View piece</a>
+      </article>
+ 
+      <article class="piece">
+        <div class="cat">CAT. 05</div>
+        <div>
+          <h3>Iron Pulse</h3>
+          <p>A gym site built around momentum: class schedules, trainer profiles, and a hero that feels like it's mid-rep.</p>
+          <div class="tags"><span>HTML / CSS / JS</span><span>English</span><span>Brand site</span></div>
+          <div class="status">Status: In development</div>
+        </div>
+        <a class="visit" href="https://codeloomtech.github.io/ironpulse/" target="_blank" rel="noopener">View piece</a>
+      </article>
+    </div>
+  </section>
+ 
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About</h2>
+        <p>I'm a second-year Computer Science student in Alexandria. Outside coursework, I build freelance websites, mostly for small brands that need a site with real character, not a template.</p>
+        <p>I care a lot about getting the small things right: Arabic layouts that are actually built right-to-left instead of mirrored, type that fits the brand, and pages that load fast and feel considered on any screen.</p>
+      </div>
+      <ul class="skills" aria-label="Skills">
+        <li><span>Frontend</span><span>HTML, CSS, JavaScript</span></li>
+        <li><span>Layouts</span><span>Responsive, Arabic RTL</span></li>
+        <li><span>Workflow</span><span>Git, GitHub Pages</span></li>
+        <li><span>Currently exploring</span><span>Data entry, Gulf/remote freelance</span></li>
+      </ul>
+    </div>
+  </section>
+ 
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Have a site worth building?</h2>
+      <a class="mail" href="mailto:yasminhusseinn7@gmail.com">yasminhusseinn7@gmail.com</a>
+      <div class="links">
+        <a href="https://github.com/codeloomtech" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div class="wrap">Yasmin Hussein, Alexandria, Egypt</div>
+</footer>
+</body>
+</html>
+ 
